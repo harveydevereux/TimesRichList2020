@@ -68,10 +68,11 @@ def ParseTable(driver):
     # the are 2 rows for the column names and a key to the data
     rows = frame.find_elements_by_tag_name("tr")
     for i in range(2,RowsInPage(driver)+2):
-        rank = i - 2 + GetEntryStartNum(driver)
+        position = rank = i - 2 + GetEntryStartNum(driver)
         # get rid of "="
         r = rows[i].text.replace("=","")
         if ")" in rows[i].text:
+            rank = r.split("(")[0]
             # previously seen (i.e last year)
             name = r.split(")")[1].split("£")[0]
             if r.count("£") == 1:
@@ -87,11 +88,12 @@ def ParseTable(driver):
                 change = ParseNumbers(change)
         else:
             # new entry
+            rank = r.split(" ")[0]
             name = " ".join(r.split("£")[0].split(" ")[1:])
             worth = r.split("£")[1].split(" ")[0]
             change = "New"
             sector = r.split("New entry ")[-1]
 
         worth = ParseNumbers(worth)
-        df.loc[rank,:] = [rank,name,worth,change,sector]
+        df.loc[position,:] = [rank,name,worth,change,sector]
     return df

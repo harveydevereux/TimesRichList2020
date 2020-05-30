@@ -32,7 +32,7 @@ driver = webdriver.Firefox(options=options)
 driver.get("https://www.thetimes.co.uk/sunday-times-rich-list#TableFullRichList")
 
 # get around the cookie consent
-frame = WebDriverWait(driver, 20).until(
+frame = WebDriverWait(driver, 100).until(
 EC.presence_of_element_located((By.ID, "sp_message_iframe_140799")))
 
 # click the I Agree button
