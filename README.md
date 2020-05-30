@@ -2,7 +2,7 @@
 
 This repo provides Python-Selenium code to scrape the data from the Times [website](https://www.thetimes.co.uk/sunday-times-rich-list).
 
-Pretty hard coded so the scrapped data is [included](https://github.com/harveydevereux/TimesRichList2020)
+Pretty hard coded so the data is [included](https://github.com/harveydevereux/TimesRichList2020)
 
 ## Setup
 
@@ -28,3 +28,19 @@ scraper in action)
 
 - Sometimes the webpage bugs or takes to long to load and so Selenium does not find the "I Agree [to cookies]" button. This will show as ```selenium.common.exceptions.ElementNotInteractableException: Message: Element <button class="message-component message-button no-children"> could not be scrolled into view``` re-running usually works
 - If the webtext changes it will likely break 
+
+## Data Analysis
+
+Example [Notebook](https://github.com/harveydevereux/TimesRichList2020/blob/master/resources/DataExploration.ipynb) to get started 
+
+### The Wealth Distribution
+
+![alt text](https://github.com/harveydevereux/TimesRichList2020/blob/master/resources/WealthDist.png)
+
+### Top 10 Sectors by Median Wealth
+
+![alt text](https://github.com/harveydevereux/TimesRichList2020/blob/master/resources/HighestMedianWealth.png)
+
+### Top 10 Sectors By Total Wealth 
+
+![alt text](https://github.com/harveydevereux/TimesRichList2020/blob/master/resources/HighestWealth.png)
