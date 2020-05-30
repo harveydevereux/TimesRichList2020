@@ -24,7 +24,7 @@ Both support the options ```--csv [string]``` and ```--headless```, the first ta
 want to save the data as, and the sceond will launch Selenium without openning a browser (otherwise you'll watch the
 scraper in action)
 
-## Caveat
+## Caveats
 
-- Rarely the webpage bugs out and so Selenium does not find the "I Agree [to cookies]" button. 
+- Sometimes the webpage bugs or takes to long to load and so Selenium does not find the "I Agree [to cookies]" button. This will show as ```selenium.common.exceptions.ElementNotInteractableException: Message: Element <button class="message-component message-button no-children"> could not be scrolled into view``` re-running usually works
 - If the webtext changes it will likely break 
