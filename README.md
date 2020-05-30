@@ -1,0 +1,30 @@
+# Times Rich List 2020 Python Scraper
+
+This repo provides Python-Selenium code to scrape the data from the Times [website](https://www.thetimes.co.uk/sunday-times-rich-list).
+
+Pretty hard coded so the scrapped data is [included](https://github.com/harveydevereux/TimesRichList2020)
+
+## Setup
+
+The code requires a working python installation with [Selenium installed](https://selenium-python.readthedocs.io/installation.html) (+ the [driver](https://selenium-python.readthedocs.io/installation.html#drivers) for you browser)
+
+Code works with the webpage on 30 May 2020, with Python 3.6.9, Selenium (Python) 3.141.0, and numpy 1.18.1 for the ceil function only
+
+## Running/Options
+run with
+```Python
+python ScrapeData.py
+```
+or 
+```Bash
+./run.sh
+```
+
+Both support the options ```--csv [string]``` and ```--headless```, the first takes the name of the csv you
+want to save the data as, and the sceond will launch Selenium without openning a browser (otherwise you'll watch the
+scraper in action)
+
+## Caveat
+
+- Rarely the webpage bugs out and so Selenium does not find the "I Agree [to cookies]" button. 
+- If the webtext changes it will likely break 
